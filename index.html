@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhanush H | Data Science & Research Analytics Portfolio</title>
+  <meta name="description" content="Professional portfolio of Dhanush H, specializing in Data Science, Research Analytics, Machine Learning, and Database Architecture. Discover projects, achievements, and capabilities.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#hero" class="logo">
+        <span class="logo-accent">&lt;</span>DHANUSH H<span class="logo-accent">.</span><span class="logo-sub">analytics</span><span class="logo-accent">/&gt;</span>
+      </a>
+      
+      <nav class="navbar">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#experience" class="nav-link">Hackathons & Certs</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary btn-nav">
+          <span>Let's Connect</span>
+          <i data-lucide="send" class="btn-icon"></i>
+        </a>
+      </div>
+      
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+        <i data-lucide="menu" class="menu-open-icon"></i>
+        <i data-lucide="x" class="menu-close-icon" style="display: none;"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <nav class="mobile-navbar">
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#skills" class="mobile-nav-link">Skills</a>
+      <a href="#projects" class="mobile-nav-link">Projects</a>
+      <a href="#achievements" class="mobile-nav-link">Achievements</a>
+      <a href="#experience" class="mobile-nav-link">Hackathons & Certs</a>
+      <a href="#contact" class="mobile-nav-link mobile-btn-connect">Let's Connect</a>
+    </nav>
+  </div>
+
+  <main>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+      
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge animate-fade-in">
+            <span class="pulse-dot"></span>
+            Available for Research & Analytics Roles
+          </div>
+          <h1 class="hero-title animate-slide-up">
+            Transforming Complex Data Into <span class="gradient-text">Actionable Insights</span>
+          </h1>
+          <p class="hero-subtitle animate-slide-up-delayed">
+            I am a results-driven Data Scientist and Researcher. I design robust database architectures, engineer intelligent machine learning workflows, and craft interactive analytics pipelines to drive strategic decisions.
+          </p>
+          
+          <div class="hero-actions animate-slide-up-delayed-more">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore Projects</span>
+              <i data-lucide="arrow-right" class="btn-icon"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get in Touch</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Front Page Important Details Grid -->
+        <div class="hero-details-container animate-fade-in-delayed">
+          <div class="details-card-header">
+            <h3>Key Contacts & Profiles</h3>
+            <p>Direct routes to collaborate with me</p>
+          </div>
+          <div class="details-grid">
+            <a href="mailto:dhanushharidoss47@gmail.com" class="details-item" target="_blank">
+              <div class="details-icon-wrapper mail">
+                <i data-lucide="mail"></i>
+              </div>
+              <div class="details-text">
+                <span class="details-label">Email Me</span>
+                <span class="details-value">dhanushharidoss47@gmail.com</span>
+              </div>
+              <i data-lucide="external-link" class="arrow-hover"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/dhanush-h-360159210/" class="details-item" target="_blank">
+              <div class="details-icon-wrapper linkedin">
+                <i data-lucide="linkedin"></i>
+              </div>
+              <div class="details-text">
+                <span class="details-label">LinkedIn Profile</span>
+                <span class="details-value">linkedin.com/in/dhanush-h</span>
+              </div>
+              <i data-lucide="external-link" class="arrow-hover"></i>
+            </a>
+
+            <a href="https://github.com/dhanush2k06?tab=repositories" class="details-item" target="_blank">
+              <div class="details-icon-wrapper github">
+                <i data-lucide="github"></i>
+              </div>
+              <div class="details-text">
+                <span class="details-label">GitHub Repositories</span>
+                <span class="details-value">github.com/dhanush2k06</span>
+              </div>
+              <i data-lucide="external-link" class="arrow-hover"></i>
+            </a>
+
+            <a href="tel:+917305632131" class="details-item">
+              <div class="details-icon-wrapper phone">
+                <i data-lucide="phone"></i>
+              </div>
+              <div class="details-text">
+                <span class="details-label">Call Directly</span>
+                <span class="details-value">+91 7305632131</span>
+              </div>
+              <i data-lucide="external-link" class="arrow-hover"></i>
+            </a>
+
+            <div class="details-item static">
+              <div class="details-icon-wrapper location">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <div class="details-text">
+                <span class="details-label">Location</span>
+                <span class="details-value">Chennai, India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-scroll-indicator">
+        <a href="#about" aria-label="Scroll down">
+          <i data-lucide="chevron-down" class="scroll-arrow"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Executive Summary</span>
+          <h2 class="section-title">Bridging Data & Strategy</h2>
+          <div class="header-line"></div>
+        </div>
+        
+        <div class="about-grid">
+          <div class="about-text-column">
+            <p class="lead-text">
+              I specialize in uncovering hidden patterns in complex datasets, translating numbers into narratives, and designing scalable machine learning solutions.
+            </p>
+            <p>
+              My analytical approach focuses on clean database normalization, robust predictive model pipelines, and interactive dashboard design. I am passionate about exploring emerging technologies and applying modern analytics frameworks to drive business performance, reduce operating costs, and identify new market opportunities.
+            </p>
+            <p>
+              A strong believer in collaborative development, I have actively led cross-functional student and project teams, fostering open communication and steering projects from brainstorming to robust, containerized deployments.
+            </p>
+            
+            <div class="about-highlights-grid">
+              <div class="highlight-item">
+                <div class="highlight-icon-box">
+                  <i data-lucide="target"></i>
+                </div>
+                <div>
+                  <h4>Goal-Oriented Analytics</h4>
+                  <p>Translating metrics directly into product and operational strategies.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-icon-box">
+                  <i data-lucide="users"></i>
+                </div>
+                <div>
+                  <h4>Collaborative Leadership</h4>
+                  <p>Fostering peer collaboration and steering projects to completion.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="about-stats-column">
+            <div class="stats-glass-card">
+              <div class="stat-circle">
+                <span class="stat-number">8.67</span>
+                <span class="stat-label">B.Tech CGPA</span>
+              </div>
+              <div class="stat-details">
+                <h4>Peri Institute of Technology</h4>
+                <p>B.Tech in Artificial Intelligence & Data Science</p>
+                <span class="timeline-date">2023 - 2027</span>
+              </div>
+            </div>
+            
+            <div class="stats-glass-card secondary">
+              <div class="stat-circle">
+                <span class="stat-number">83%</span>
+                <span class="stat-label">12th Grade</span>
+              </div>
+              <div class="stat-details">
+                <h4>St.Bede's Anglo Indian School</h4>
+                <p>Higher Secondary Certificate</p>
+                <span class="timeline-date">2022 - 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section-padding alt-bg">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Expertise</span>
+          <h2 class="section-title">Technical Capabilities</h2>
+          <div class="header-line"></div>
+        </div>
+        
+        <div class="skills-grid">
+          <!-- Skill Category 1 -->
+          <div class="skills-card">
+            <div class="skills-card-header">
+              <div class="skills-icon-wrapper programming">
+                <i data-lucide="code-2"></i>
+              </div>
+              <h3>Programming & Analysis</h3>
+            </div>
+            <ul class="skills-list">
+              <li>
+                <div class="skill-name-row">
+                  <span class="skill-title">Python</span>
+                  <span class="skill-pct">Expert</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" style="width: 92%;"></div>
+                </div>
+                <span class="skill-desc">Pandas, NumPy, automation scripting, algorithmic logic</span>
+              </li>
+
+            </ul>
+          </div>
+
+          <!-- Skill Category 2 -->
+          <div class="skills-card">
+            <div class="skills-card-header">
+              <div class="skills-icon-wrapper database">
+                <i data-lucide="database"></i>
+              </div>
+              <h3>Database & Storage</h3>
+            </div>
+            <ul class="skills-list">
+              <li>
+                <div class="skill-name-row">
+                  <span class="skill-title">MySQL</span>
+                  <span class="skill-pct">Advanced</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" style="width: 88%;"></div>
+                </div>
+                <span class="skill-desc">Stored procedures, query tuning, indexing, CTEs, JOINs</span>
+              </li>
+              <li>
+                <div class="skill-name-row">
+                  <span class="skill-title">Excel Analytics</span>
+                  <span class="skill-pct">Advanced</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" style="width: 85%;"></div>
+                </div>
+                <span class="skill-desc">VBA scripting, pivot operations, complex charting</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Skill Category 3 -->
+          <div class="skills-card">
+            <div class="skills-card-header">
+              <div class="skills-icon-wrapper ml">
+                <i data-lucide="brain-circuit"></i>
+              </div>
+              <h3>ML & Visualization</h3>
+            </div>
+            <ul class="skills-list">
+              <li>
+                <div class="skill-name-row">
+                  <span class="skill-title">Machine Learning</span>
+                  <span class="skill-pct">Intermediate</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" style="width: 80%;"></div>
+                </div>
+                <span class="skill-desc">Scikit-learn, SVM, Classification, Linear Regression</span>
+              </li>
+              <li>
+                <div class="skill-name-row">
+                  <span class="skill-title">Power BI / Visualization</span>
+                  <span class="skill-pct">Advanced</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" style="width: 90%;"></div>
+                </div>
+                <span class="skill-desc">DAX formulas, interactive dashboard design, data modeling</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="additional-skills-container">
+          <h4>Additional Core Competencies</h4>
+          <div class="additional-skills-pills">
+            <span class="skill-pill"><i data-lucide="check-circle-2"></i> Docker Containerization</span>
+            <span class="skill-pill"><i data-lucide="check-circle-2"></i> GitHub Workflows</span>
+            <span class="skill-pill"><i data-lucide="check-circle-2"></i> Data Storytelling</span>
+            <span class="skill-pill"><i data-lucide="check-circle-2"></i> Technical Documentation</span>
+            <span class="skill-pill"><i data-lucide="check-circle-2"></i> Figma UI/UX Design</span>
+            <span class="skill-pill"><i data-lucide="check-circle-2"></i> Data Integrity Auditing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Featured Works</span>
+          <h2 class="section-title">Data Analytics & Machine Learning Projects</h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-category">Database Architecture</span>
+              <div class="project-icons">
+                <i data-lucide="database"></i>
+              </div>
+            </div>
+            <h3 class="project-title">Inventory & Sales Relational Database</h3>
+            <p class="project-description">
+              Designed and developed a relational database to manage inventory, suppliers, customers, and sales transactions using MySQL.
+            </p>
+            <div class="project-impact">
+              <span class="impact-title">Key Features:</span>
+              <p>Implemented SQL queries, JOINs, aggregate functions, and stored procedures to perform inventory tracking, stock monitoring, and sales reporting.</p>
+            </div>
+            <div class="project-tags">
+              <span>MySQL</span>
+              <span>Docker</span>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-category">Business Intelligence</span>
+              <div class="project-icons">
+                <i data-lucide="bar-chart-3"></i>
+              </div>
+            </div>
+            <h3 class="project-title">Sales Performance & Profitability Dashboard</h3>
+            <p class="project-description">
+              Developed an interactive Power BI dashboard to analyze sales performance, revenue trends, regional sales, and product-wise profitability.
+            </p>
+            <div class="project-impact">
+              <span class="impact-title">Key Feature:</span>
+              <p>Provides dynamic visualization of regional distributions, product margins, and revenue trends to support business operations.</p>
+            </div>
+            <div class="project-tags">
+              <span>Power BI</span>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-category">Behavioral Analytics</span>
+              <div class="project-icons">
+                <i data-lucide="smartphone"></i>
+              </div>
+            </div>
+            <h3 class="project-title">Brain Rot Prediction & App Usage Analyzer</h3>
+            <p class="project-description">
+              Designed a mechanism for predicting brain rot by user’s activity duration and the categories of the application they use.
+            </p>
+            <div class="project-impact">
+              <span class="impact-title">Key Purpose:</span>
+              <p>Serves as efficient data for detecting the possibility of brain rot, supporting mental health professionals and users in identifying unhealthy digital usage patterns and encouraging healthier digital habits.</p>
+            </div>
+            <div class="project-tags">
+              <span>Streamlit</span>
+              <span>Python</span>
+              <span>Docker</span>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-category">Predictive ML</span>
+              <div class="project-icons">
+                <i data-lucide="shield-alert"></i>
+              </div>
+            </div>
+            <h3 class="project-title">SVM Clinical Infection Risk Predictor</h3>
+            <p class="project-description">
+              Built a machine learning model using Support Vector Machine (SVM) to predict COVID-19 infection based on patient health parameters.
+            </p>
+            <div class="project-impact">
+              <span class="impact-title">Key Implementation:</span>
+              <p>Performed data preprocessing, feature selection, model training, and evaluation (accuracy, precision, recall, F1-score) to ensure reliable prediction results.</p>
+            </div>
+            <div class="project-tags">
+              <span>Scikit-learn</span>
+              <span>NumPy</span>
+              <span>Pandas</span>
+              <span>Docker</span>
+              <span>Python</span>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-category">AI Engineering</span>
+              <div class="project-icons">
+                <i data-lucide="compass"></i>
+              </div>
+            </div>
+            <h3 class="project-title">AI-Based Personalized Travel Assistant</h3>
+            <p class="project-description">
+              Developed an AI-based travel assistant that provides personalized destination recommendations and itinerary suggestions based on user preferences.
+            </p>
+            <div class="project-impact">
+              <span class="impact-title">Key Implementation:</span>
+              <p>Integrated NLP techniques to understand queries and designed a scalable architecture combining Python, AI services, and data-driven recommendation logic.</p>
+            </div>
+            <div class="project-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Google Maps API</span>
+              <span>Tailwind CSS</span>
+              <span>GitHub</span>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project-card">
+            <div class="project-header">
+              <span class="project-category">Computer Vision</span>
+              <div class="project-icons">
+                <i data-lucide="video"></i>
+              </div>
+            </div>
+            <h3 class="project-title">CrowdGuard Live: Real-Time Crowd Management System</h3>
+            <p class="project-description">
+              Developed an AI-powered crowd monitoring system to perform real-time person detection, crowd counting, and density estimation using YOLO11. Built an interactive Flask web dashboard for live video streaming, crowd analytics, and automated risk-level visualization.
+            </p>
+            <div class="project-impact">
+              <span class="impact-title">Key Impact:</span>
+              <p>Designed a modular architecture supporting multiple video sources (drone, IP, CCTV) and integrated Flask-SocketIO to enable instant real-time telemetry updates for smart city surveillance.</p>
+            </div>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Flask</span>
+              <span>Flask-SocketIO</span>
+              <span>OpenCV</span>
+              <span>YOLO11</span>
+              <span>JavaScript</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rewards & Achievements Section -->
+    <section id="achievements" class="achievements-section section-padding alt-bg">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Success Milestones</span>
+          <h2 class="section-title">Rewards & Academic Honors</h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="achievements-timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><i data-lucide="award"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <h3>Emerging Talent Award</h3>
+                <span class="timeline-org">Peri Institute of Technology</span>
+              </div>
+              <p class="timeline-desc">
+                Awarded for outstanding technical progress, analytical excellence, and proactive team building inside the Artificial Intelligence & Data Science department.
+              </p>
+              <div class="timeline-footer">
+                <span class="badge-year">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><i data-lucide="database"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <h3>Runner-Up: SQL Code Off</h3>
+                <span class="timeline-org">Easwari Engineering College</span>
+              </div>
+              <p class="timeline-desc">
+                Competed against 100+ database designers. Solved advanced query design challenges, index optimization bottlenecks, and complex data-joining puzzles under tight time limits.
+              </p>
+              <div class="timeline-footer">
+                <span class="badge-year">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><i data-lucide="swords"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <h3>Runner-Up: Tech Battle</h3>
+                <span class="timeline-org">SRM Institute of Science and Technology</span>
+              </div>
+              <p class="timeline-desc">
+                Secured second place in an intensive, multi-round technical challenge testing core programming knowledge, data structures, and algorithmic puzzle-solving.
+              </p>
+              <div class="timeline-footer">
+                <span class="badge-year">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"><i data-lucide="tablet"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <h3>3rd Place: Pixel Memo</h3>
+                <span class="timeline-org">Peri Institute of Technology</span>
+              </div>
+              <p class="timeline-desc">
+                Designed a responsive utility dashboard frontend under a strict time limit, evaluated on UI/UX fidelity, layout flexibility, and interactive transitions.
+              </p>
+              <div class="timeline-footer">
+                <span class="badge-year">2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hackathons & Certifications Section -->
+    <section id="experience" class="certs-section section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Competitions & Learning</span>
+          <h2 class="section-title">Hackathons & Technical Credentials</h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="certs-grid">
+          <!-- Hackathon 1 -->
+          <div class="cert-card hackathon">
+            <div class="cert-header">
+              <div class="cert-badge">24h Hackathon</div>
+              <span class="cert-institution">SIMATS</span>
+            </div>
+            <h3>DevOps Voice-Activated Command Agent</h3>
+            <p>
+              Collaboratively developed an intelligent Voice Agent translating spoken English commands into direct repository actions on Docker and GitHub. Designed the voice-to-text NLP processor to isolate variables like file paths and branch actions.
+            </p>
+            <div class="cert-tech">
+              <span>Python</span>
+              <span>NLTK (NLP)</span>
+              <span>Tkinter</span>
+              <span>GitHub API</span>
+              <span>Speech Recognition</span>
+            </div>
+          </div>
+
+          <!-- Hackathon 2 -->
+          <div class="cert-card hackathon">
+            <div class="cert-header">
+              <div class="cert-badge">24h Hackathon</div>
+              <span class="cert-institution">St.Joseph's College of Engineering</span>
+            </div>
+            <h3>Unified Mentorship & Job Analytics Platform</h3>
+            <p>
+              Designed and coded a platform offering interactive visualization of job market trends, custom learning roadmaps, and instant QA answering via an offline LLM agent. 
+            </p>
+            <div class="cert-tech">
+              <span>HTML/CSS/JS</span>
+              <span>Node.js</span>
+              <span>Ollama API</span>
+              <span>Market Telemetry</span>
+            </div>
+          </div>
+
+          <!-- Certification 1 -->
+          <div class="cert-card credential">
+            <div class="cert-header">
+              <div class="cert-badge credential-badge">Professional Credential</div>
+              <span class="cert-institution">Cisco</span>
+            </div>
+            <h3>Introduction to Cybersecurity</h3>
+            <p>
+              Completed comprehensive training in fundamental network security, host-based defenses, threat vectors, cryptography concepts, and digital hygiene.
+            </p>
+            <div class="cert-date">Completed</div>
+          </div>
+
+          <!-- Certification 2 -->
+          <div class="cert-card credential">
+            <div class="cert-header">
+              <div class="cert-badge credential-badge">Cloud AI Certification</div>
+              <span class="cert-institution">Amazon Web Services</span>
+            </div>
+            <h3>AWS AI Practitioner Challenge</h3>
+            <p>
+              Validated knowledge of Amazon Bedrock, SageMaker, generative AI applications, deep learning concepts, and secure cloud operations.
+            </p>
+            <div class="cert-date">Completed</div>
+          </div>
+        </div>
+
+        <div class="extra-activities-box">
+          <div class="activity-item">
+            <i data-lucide="shield-check"></i>
+            <div>
+              <strong>IIC Regional Meet</strong>
+              <p>Delegate representative hosted at St. Joseph's Institute of Technology discussing innovation and startup policies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding alt-bg">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Let's Work Together</span>
+          <h2 class="section-title">Connect With Me</h2>
+          <div class="header-line"></div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-column">
+            <h3>Interested in discussing a project or role?</h3>
+            <p>
+              Submit the form, and a notification will be routed to my mailbox. You can also reach out to me directly through phone or profiles listed on the front page.
+            </p>
+
+            <div class="contact-meta-list">
+              <div class="meta-item">
+                <i data-lucide="mail"></i>
+                <div>
+                  <h4>Email ID</h4>
+                  <p><a href="mailto:dhanushharidoss47@gmail.com">dhanushharidoss47@gmail.com</a></p>
+                </div>
+              </div>
+              <div class="meta-item">
+                <i data-lucide="phone"></i>
+                <div>
+                  <h4>Call Directly</h4>
+                  <p><a href="tel:+917305632131">+91 7305632131</a></p>
+                </div>
+              </div>
+              <div class="meta-item">
+                <i data-lucide="linkedin"></i>
+                <div>
+                  <h4>LinkedIn</h4>
+                  <p><a href="https://www.linkedin.com/in/dhanush-h-360159210/" target="_blank">dhanush-h-360159210</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-column">
+            <!-- Alert Box for success / error notifications -->
+            <div id="contact-alert" class="alert-box" style="display: none;">
+              <span id="alert-message"></span>
+              <button id="alert-close" class="alert-close-btn">&times;</button>
+            </div>
+
+            <form id="contact-form" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-name">Your Name *</label>
+                  <input type="text" id="form-name" name="user_name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                  <label for="form-email">Your Email *</label>
+                  <input type="email" id="form-email" name="user_email" required placeholder="john@example.com">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="form-subject">Subject</label>
+                <input type="text" id="form-subject" name="subject" placeholder="Opportunities / Feedback">
+              </div>
+
+              <div class="form-group">
+                <label for="form-message">Message *</label>
+                <textarea id="form-message" name="message" rows="5" required placeholder="Hello Dhanush, I'd love to connect regarding..."></textarea>
+              </div>
+
+              <button type="submit" id="form-submit" class="btn btn-primary btn-submit">
+                <span>Send Message</span>
+                <i data-lucide="send" class="btn-icon"></i>
+                <div class="spinner" style="display: none;"></div>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; 2026 Dhanush H. Designed with custom HTML, CSS, and JS.</p>
+      <div class="footer-links">
+        <a href="https://github.com/dhanush2k06?tab=repositories" target="_blank" aria-label="GitHub"><i data-lucide="github"></i></a>
+        <a href="https://www.linkedin.com/in/dhanush-h-360159210/" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lucide Icons Rendering Script -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- Custom Behavior Script -->
+  <script src="script.js"></script>
+</body>
+</html>
