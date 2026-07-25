@@ -10,29 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------------------------------------------------------
-     EMAILJS CONFIGURATION
-     Configure your EmailJS account details here to receive mail.
-     Learn more at: https://www.emailjs.com/
+     CONTACT FORM ROUTING CONFIGURATION
+     We use FormSubmit (https://formsubmit.co/) for keyless, 
+     functional email delivery directly to the owner's inbox.
      --------------------------------------------------------- */
-  const EMAILJS_CONFIG = {
-    PUBLIC_KEY: 'YOUR_EMAILJS_PUBLIC_KEY', // e.g. 'user_xxxxxxxxxxxxxx'
-    SERVICE_ID: 'YOUR_EMAILJS_SERVICE_ID', // e.g. 'service_xxxxxxx'
-    TEMPLATE_ID: 'YOUR_EMAILJS_TEMPLATE_ID', // e.g. 'template_xxxxxxx'
-    RECIPIENT_EMAIL: 'dhanushharidoss47@gmail.com'
-  };
-
-  // Initialize EmailJS if public key is configured
-  const isEmailJSConfigured = EMAILJS_CONFIG.PUBLIC_KEY && 
-                              EMAILJS_CONFIG.PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY' &&
-                              EMAILJS_CONFIG.SERVICE_ID !== 'YOUR_EMAILJS_SERVICE_ID' &&
-                              EMAILJS_CONFIG.TEMPLATE_ID !== 'YOUR_EMAILJS_TEMPLATE_ID';
-
-  if (isEmailJSConfigured && typeof emailjs !== 'undefined') {
-    emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
-    console.log("EmailJS successfully initialized.");
-  } else {
-    console.log("EmailJS details not configured. Operating in mailto fallback mode.");
-  }
+  const RECIPIENT_EMAIL = 'dhanushharidoss47@gmail.com';
 
   /* ==========================================================================
      MOBILE DRAWER TOGGLE
@@ -115,13 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const animatableElements = [
     ...document.querySelectorAll('.about-text-column'),
     ...document.querySelectorAll('.stats-glass-card'),
-    ...document.querySelectorAll('.skills-card'),
     ...document.querySelectorAll('.project-card'),
     ...document.querySelectorAll('.timeline-item'),
     ...document.querySelectorAll('.cert-card'),
     ...document.querySelectorAll('.contact-info-column'),
     ...document.querySelectorAll('.contact-form-column')
-  ];
+  ].filter(el => !el.closest('.skills-section'));
 
   animatableElements.forEach(el => {
     el.classList.add('reveal-item');
@@ -197,39 +178,42 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      if (isEmailJSConfigured) {
-        // Send email via EmailJS API
-        const emailParams = {
-          from_name: formName,
-          from_email: formEmail,
-          subject: formSubject,
-          message: formMessage,
-          to_email: EMAILJS_CONFIG.RECIPIENT_EMAIL
-        };
+      // Send email via FormSubmit AJAX API
+      const emailParams = {
+        name: formName,
+        email: formEmail,
+        _subject: formSubject,
+        message: formMessage
+      };
 
-        emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, emailParams)
-          .then(() => {
-            showAlert('success', 'Thank you! Your message was delivered successfully. I will get back to you shortly.');
-            contactForm.reset();
-            resetSubmitButton();
-          })
-          .catch((error) => {
-            console.error('EmailJS Error:', error);
-            showAlert('error', 'Failed to dispatch email automatically via EmailJS. Redirecting to your local email client.');
-            setTimeout(() => {
-              triggerMailtoFallback(formName, formEmail, formSubject, formMessage);
-              resetSubmitButton();
-            }, 2000);
-          });
-      } else {
-        // Fallback: Using prefilled mailto draft
-        showAlert('success', 'Launching your local mail client to dispatch your message...');
+      fetch(`https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`, {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(emailParams)
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Server returned error status');
+        }
+      })
+      .then(data => {
+        showAlert('success', 'Thank you! Your message was delivered successfully. I will get back to you shortly.');
+        contactForm.reset();
+        resetSubmitButton();
+      })
+      .catch((error) => {
+        console.error('FormSubmit Error:', error);
+        showAlert('error', 'Failed to dispatch email automatically. Redirecting to your local email client.');
         setTimeout(() => {
           triggerMailtoFallback(formName, formEmail, formSubject, formMessage);
-          contactForm.reset();
           resetSubmitButton();
-        }, 1200);
-      }
+        }, 2000);
+      });
     });
   }
 
@@ -252,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `Contact Email: ${email}`
     );
     
-    const mailtoUrl = `mailto:${EMAILJS_CONFIG.RECIPIENT_EMAIL}?subject=${formattedSubject}&body=${emailBody}`;
+    const mailtoUrl = `mailto:${RECIPIENT_EMAIL}?subject=${formattedSubject}&body=${emailBody}`;
     
     // Create hidden anchor element to trigger browser default mail action without resetting page view
     const tempLink = document.createElement('a');
