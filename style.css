@@ -1,4 +1,4 @@
-/* ==========================================================================
+ /* ==========================================================================
    DESIGN SYSTEM & VARIABLES
    ========================================================================== */
 :root {
@@ -15,7 +15,7 @@
   --secondary-hover: #c6f6d5;
   --secondary-light: rgba(154, 230, 180, 0.12);
   
-  --dark: #9AE6B4;            /* Secondary (for headers) */
+  --dark: #E8E8E8;            /* Light text for headings */
   --text-main: #F5F5F5;       /* Text */
   --text-muted: #b8b8b8;      /* Muted text */
   
@@ -125,8 +125,8 @@ li {
 }
 
 .section-padding {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .alt-bg {
@@ -465,17 +465,22 @@ li {
 
 .hero-container {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 3rem;
-  align-items: start;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2.5rem;
+  align-items: center;
   position: relative;
   z-index: 2;
 }
 
-.hero-aside {
+.hero-photo-col {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+}
+
+.hero-details-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-photo-frame {
@@ -485,6 +490,9 @@ li {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   box-shadow: var(--shadow-xl), var(--shadow-glow);
   overflow: hidden;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
 }
 
 .hero-photo-frame::after {
@@ -507,6 +515,11 @@ li {
   background-color: var(--bg-secondary);
 }
 
+.hero-content {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Hero Badge */
 .hero-badge {
   display: inline-flex;
@@ -521,6 +534,7 @@ li {
   color: var(--text-main);
   margin-bottom: 1.5rem;
   box-shadow: var(--shadow-sm);
+  width: fit-content;
 }
 
 .pulse-dot {
@@ -940,33 +954,7 @@ a.details-item:hover .arrow-hover {
   color: var(--text-muted);
 }
 
-.skill-level {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 0.2rem 0.55rem;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--border);
-  background-color: var(--bg-secondary);
-  color: var(--text-main);
-}
-
-.skill-level-expert {
-  border-color: rgba(74, 222, 128, 0.35);
-  color: var(--primary);
-}
-
-.skill-level-advanced {
-  border-color: rgba(154, 230, 180, 0.3);
-  color: var(--secondary);
-}
-
-.skill-level-intermediate {
-  color: var(--text-muted);
-}
-
-.skills-section .skills-card,
+.skills-section
 .skills-section .additional-skills-container {
   opacity: 1;
   transform: none;
@@ -1736,10 +1724,14 @@ a.details-item:hover .arrow-hover {
   .hero-subtitle { margin-left: auto; margin-right: auto; }
   .hero-actions { justify-content: center; }
 
-  .hero-aside {
+  .hero-photo-col {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .hero-details-col {
     max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     width: 100%;
   }
   

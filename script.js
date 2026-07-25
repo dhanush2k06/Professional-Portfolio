@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------------------------------------------------------
      CONTACT FORM ROUTING CONFIGURATION
-     We use FormSubmit (https://formsubmit.co/) for keyless, 
-     functional email delivery directly to the owner's inbox.
+     Uses mailto: to open the visitor's default email client
+     with a pre-filled message addressed to the owner.
      --------------------------------------------------------- */
   const RECIPIENT_EMAIL = 'dhanushharidoss47@gmail.com';
 
@@ -178,42 +178,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Send email via FormSubmit AJAX API
-      const emailParams = {
-        name: formName,
-        email: formEmail,
-        _subject: formSubject,
-        message: formMessage
-      };
-
-      fetch(`https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`, {
-        method: "POST",
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(emailParams)
-      })
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error('Server returned error status');
-        }
-      })
-      .then(data => {
-        showAlert('success', 'Thank you! Your message was delivered successfully. I will get back to you shortly.');
-        contactForm.reset();
-        resetSubmitButton();
-      })
-      .catch((error) => {
-        console.error('FormSubmit Error:', error);
-        showAlert('error', 'Failed to dispatch email automatically. Redirecting to your local email client.');
-        setTimeout(() => {
-          triggerMailtoFallback(formName, formEmail, formSubject, formMessage);
-          resetSubmitButton();
-        }, 2000);
-      });
+      // Open default email client with pre-filled message via mailto:
+      triggerMailtoFallback(formName, formEmail, formSubject, formMessage);
+      showAlert('success', 'Your email client has been opened. Just click send to deliver your message!');
+      contactForm.reset();
+      resetSubmitButton();
     });
   }
 
