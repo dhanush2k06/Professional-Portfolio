@@ -17,6 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const RECIPIENT_EMAIL = 'dhanushharidoss47@gmail.com';
 
   /* ==========================================================================
+     IOS SAFE AREA & VIEWPORT FIX
+     ========================================================================== */
+  const setVH = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  };
+  setVH();
+  window.addEventListener('resize', setVH);
+
+  /* ==========================================================================
      MOBILE DRAWER TOGGLE
      ========================================================================== */
   const mobileToggle = document.querySelector('.mobile-nav-toggle');
@@ -31,10 +41,20 @@ document.addEventListener('DOMContentLoaded', () => {
       menuOpenIcon.style.display = 'none';
       menuCloseIcon.style.display = 'block';
       document.body.style.overflow = 'hidden'; // Lock background scrolling
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${window.scrollY}px`;
     } else {
       menuOpenIcon.style.display = 'block';
       menuCloseIcon.style.display = 'none';
+      const scrollY = document.body.style.top;
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
     }
   };
 
@@ -49,6 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleMobileMenu();
       }
     });
+  });
+
+  // Close drawer on escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+      toggleMobileMenu();
+    }
   });
 
   /* ==========================================================================
@@ -66,9 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
       header.classList.remove('scrolled');
     }
 
-    // Active Section Tracking (Scrollspy)
+    // Active Section Tracking (Scrollspy) - adjust offset for mobile
+    const isMobile = window.innerWidth <= 768;
+    const scrollOffset = isMobile ? 80 : 120;
     let currentSectionId = '';
-    const scrollPosition = window.scrollY + 120; // offset navigation height
+    const scrollPosition = window.scrollY + scrollOffset;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
@@ -86,9 +115,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('scroll', handleScroll, { passive: true });
   // Run once on load to establish current scroll position
   handleScroll();
+  
+  // Re-run scroll spy on resize for accurate offset
+  window.addEventListener('resize', handleScroll);
 
   /* ==========================================================================
      SCROLL REVEAL ANIMATIONS (Intersection Observer)
