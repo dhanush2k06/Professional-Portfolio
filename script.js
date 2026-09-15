@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ...document.querySelectorAll('.timeline-item'),
     ...document.querySelectorAll('.cert-card'),
     ...document.querySelectorAll('.contact-info-column'),
-    ...document.querySelectorAll('.contact-form-column')
+    ...document.querySelectorAll('.meta-card')
   ].filter(el => !el.closest('.skills-section'));
 
   animatableElements.forEach(el => {
@@ -156,95 +156,4 @@ document.addEventListener('DOMContentLoaded', () => {
   animatableElements.forEach(el => {
     revealObserver.observe(el);
   });
-
-  /* ==========================================================================
-     CONTACT FORM & EMAIL DELIVERY
-     ========================================================================== */
-  const contactForm = document.getElementById('contact-form');
-  const alertBox = document.getElementById('contact-alert');
-  const alertMsg = document.getElementById('alert-message');
-  const alertClose = document.getElementById('alert-close');
-  const submitBtn = document.getElementById('form-submit');
-  const spinner = submitBtn.querySelector('.spinner');
-  const btnText = submitBtn.querySelector('span');
-  const btnIcon = submitBtn.querySelector('.btn-icon');
-
-  const showAlert = (type, message) => {
-    alertBox.style.display = 'flex';
-    alertBox.className = `alert-box ${type}`;
-    alertMsg.textContent = message;
-    
-    // Auto scroll to alert
-    alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  };
-
-  const hideAlert = () => {
-    alertBox.style.display = 'none';
-  };
-
-  if (alertClose) {
-    alertClose.addEventListener('click', hideAlert);
-  }
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      
-      // Reset state
-      hideAlert();
-      submitBtn.disabled = true;
-      spinner.style.display = 'block';
-      btnText.textContent = 'Sending...';
-      if (btnIcon) btnIcon.style.display = 'none';
-
-      // Gather form inputs
-      const formName = document.getElementById('form-name').value.trim();
-      const formEmail = document.getElementById('form-email').value.trim();
-      const formSubject = document.getElementById('form-subject').value.trim() || 'No Subject';
-      const formMessage = document.getElementById('form-message').value.trim();
-
-      // Form validation check
-      if (!formName || !formEmail || !formMessage) {
-        showAlert('error', 'Please fill in all required fields marked with an asterisk (*).');
-        resetSubmitButton();
-        return;
-      }
-
-      // Open default email client with pre-filled message via mailto:
-      triggerMailtoFallback(formName, formEmail, formSubject, formMessage);
-      showAlert('success', 'Your email client has been opened. Just click send to deliver your message!');
-      contactForm.reset();
-      resetSubmitButton();
-    });
-  }
-
-  // Restore submit button view
-  function resetSubmitButton() {
-    submitBtn.disabled = false;
-    spinner.style.display = 'none';
-    btnText.textContent = 'Send Message';
-    if (btnIcon) btnIcon.style.display = 'block';
-  }
-
-  // Construct mailto link
-  function triggerMailtoFallback(name, email, subject, message) {
-    const formattedSubject = encodeURIComponent(`Portfolio Connect: ${subject}`);
-    const emailBody = encodeURIComponent(
-      `Hello Dhanush,\n\n` +
-      `${message}\n\n` +
-      `-----------------------------------------\n` +
-      `Sender: ${name}\n` +
-      `Contact Email: ${email}`
-    );
-    
-    const mailtoUrl = `mailto:${RECIPIENT_EMAIL}?subject=${formattedSubject}&body=${emailBody}`;
-    
-    // Create hidden anchor element to trigger browser default mail action without resetting page view
-    const tempLink = document.createElement('a');
-    tempLink.href = mailtoUrl;
-    tempLink.target = '_blank';
-    document.body.appendChild(tempLink);
-    tempLink.click();
-    document.body.removeChild(tempLink);
-  }
 });
