@@ -131,9 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ...document.querySelectorAll('.stats-glass-card'),
     ...document.querySelectorAll('.project-card'),
     ...document.querySelectorAll('.timeline-item'),
-    ...document.querySelectorAll('.cert-card'),
-    ...document.querySelectorAll('.contact-info-column'),
-    ...document.querySelectorAll('.meta-card')
+    ...document.querySelectorAll('.cert-card')
   ].filter(el => !el.closest('.skills-section'));
 
   animatableElements.forEach(el => {
